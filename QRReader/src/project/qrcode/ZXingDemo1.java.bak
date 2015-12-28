@@ -35,7 +35,11 @@ public class ZXingDemo1 {
 		ZXingDemo1.image = image;
 	}
 
-
+	/**
+     * @param args
+     * @throws WriterException
+     * @throws IOException
+     */
     public static void main(String[] args) throws WriterException, IOException {
         String qrCodeText = "hello Good Day";
         String filePath = "D:\\QR\\QR_Code2.png";
@@ -47,8 +51,7 @@ public class ZXingDemo1 {
         System.out.println(readQRImage(qrFile));
         System.out.println("DONE");
     }
-
-	//Decode
+ 
     public static String readQRImage(File filepath) {
    
     	 
@@ -69,8 +72,6 @@ public class ZXingDemo1 {
     		return "not found";
 		
 	}
-
-	//Decode
     public static String readQRImage(BufferedImage i){
     	Result result = null;
     	BinaryBitmap binaryBitmap;
@@ -88,8 +89,6 @@ public class ZXingDemo1 {
     	else
     		return "not found";
     }
-
-	//Encode
 	public static void createQRImage(String qrCodeText, int size) throws WriterException, IOException 
 	{
         // Create the ByteMatrix for the QR-Code that encodes the given String
@@ -137,7 +136,7 @@ public class ZXingDemo1 {
 		
 			ImageIO.write(image, fileType, qrFile);
 		} catch (IOException e) {
-	
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
